@@ -66,8 +66,7 @@ func TestSaveHandler(t *testing.T) {
 
 			if tc.respError == "" || tc.mockError != nil {
 				urlSaverMock.On("SaveURL", tc.url, mock.AnythingOfType("string")).
-					Return(int64(1), tc.mockError).
-					Once()
+					Return(int64(1), tc.mockError).Once()
 			}
 
 			handler := save.New(slogdiscard.NewDiscardLogger(), urlSaverMock)
