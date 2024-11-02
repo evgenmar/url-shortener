@@ -23,14 +23,15 @@ type URLGetter interface {
 
 func New(log *slog.Logger, urlGetter URLGetter) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		const op = "handlers.url.redirect.New"
+		const op = "handlers.redirect.New"
 
-		log := log.With(
+		log = log.With(
 			slog.String("op", op),
 			slog.String("request_id", middleware.GetReqID(r.Context())),
 		)
 
 		alias := chi.URLParam(r, "alias")
+
 		if alias == "" {
 			log.Info("alias is empty")
 			render.JSON(w, r, resp.Error("invalid request"))
