@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
-	"fmt"
 	"io"
 	"net/http"
 	"net/http/httptest"
@@ -72,7 +71,6 @@ func TestDeleteHandler(t *testing.T) {
 
 			var respBody resp.Response
 
-			fmt.Println(tc.name, len(body))
 			require.NoError(t, json.Unmarshal(body, &respBody))
 
 			require.Equal(t, tc.respError, respBody.Error)
