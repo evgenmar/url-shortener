@@ -32,12 +32,6 @@ func New(log *slog.Logger, urlGetter URLGetter) http.HandlerFunc {
 
 		alias := chi.URLParam(r, "alias")
 
-		if alias == "" {
-			log.Info("alias is empty")
-			render.JSON(w, r, resp.Error("invalid request"))
-			return
-		}
-
 		resURL, err := urlGetter.GetURL(alias)
 		if errors.Is(err, storage.ErrURLNotFound) {
 			log.Info("url not found", "alias", alias)

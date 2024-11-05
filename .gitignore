@@ -2,3 +2,4 @@
 storage/*.db
 go.sum
 .VSCodeCounter/
+.vscode/

@@ -14,7 +14,7 @@ import (
 	"url-shortener/internal/lib/logger/handlers/slogdiscard"
 )
 
-func TestSaveHandler(t *testing.T) {
+func TestRedirectHandler(t *testing.T) {
 	cases := []struct {
 		name      string
 		alias     string

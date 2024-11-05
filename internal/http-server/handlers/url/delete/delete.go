@@ -12,7 +12,7 @@ import (
 	"github.com/go-chi/render"
 )
 
-//go:generate go run github.com/vektra/mockery/v2@v2.28.2 --name=URLSaver
+//go:generate go run github.com/vektra/mockery/v2@v2.28.2 --name=URLDeleter
 type URLDeleter interface {
 	DeleteURL(alias string) error
 }
@@ -28,15 +28,9 @@ func New(log *slog.Logger, urlDeleter URLDeleter) http.HandlerFunc {
 
 		alias := chi.URLParam(r, "alias")
 
-		if alias == "" {
-			log.Info("alias is empty")
-			render.JSON(w, r, resp.Error("invalid request"))
-			return
-		}
-
 		if err := urlDeleter.DeleteURL(alias); err != nil {
 			log.Error("failed to delete url", sl.Err(err))
-			render.JSON(w, r, resp.Error("internal error"))
+			render.JSON(w, r, resp.Error("failed to delete url"))
 			return
 		}
 
