@@ -4,10 +4,11 @@ import (
 	"errors"
 	"log/slog"
 	"net/http"
-	resp "url-shortener/internal/lib/api/response"
-	"url-shortener/internal/lib/logger/sl"
-	"url-shortener/internal/lib/random"
-	"url-shortener/internal/storage"
+
+	resp "github.com/evgenmar/url-shortener/internal/lib/api/response"
+	"github.com/evgenmar/url-shortener/internal/lib/logger/sl"
+	"github.com/evgenmar/url-shortener/internal/lib/random"
+	"github.com/evgenmar/url-shortener/internal/storage"
 
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/render"

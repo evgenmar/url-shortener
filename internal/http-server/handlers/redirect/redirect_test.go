@@ -8,10 +8,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"url-shortener/internal/http-server/handlers/redirect"
-	"url-shortener/internal/http-server/handlers/redirect/mocks"
-	"url-shortener/internal/lib/api"
-	"url-shortener/internal/lib/logger/handlers/slogdiscard"
+	"github.com/evgenmar/url-shortener/internal/http-server/handlers/redirect"
+	"github.com/evgenmar/url-shortener/internal/http-server/handlers/redirect/mocks"
+	"github.com/evgenmar/url-shortener/internal/lib/api"
+	"github.com/evgenmar/url-shortener/internal/lib/logger/handlers/slogdiscard"
 )
 
 func TestRedirectHandler(t *testing.T) {

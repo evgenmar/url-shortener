@@ -3,9 +3,10 @@ package delete
 import (
 	"log/slog"
 	"net/http"
-	"url-shortener/internal/lib/logger/sl"
 
-	resp "url-shortener/internal/lib/api/response"
+	"github.com/evgenmar/url-shortener/internal/lib/logger/sl"
+
+	resp "github.com/evgenmar/url-shortener/internal/lib/api/response"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"

@@ -3,8 +3,9 @@ package sqlite
 import (
 	"database/sql"
 	"errors"
-	"url-shortener/internal/lib/e"
-	"url-shortener/internal/storage"
+
+	"github.com/evgenmar/url-shortener/internal/lib/e"
+	"github.com/evgenmar/url-shortener/internal/storage"
 
 	"github.com/mattn/go-sqlite3"
 )

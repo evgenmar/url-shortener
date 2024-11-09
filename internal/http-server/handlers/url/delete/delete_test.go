@@ -12,10 +12,10 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/stretchr/testify/require"
 
-	"url-shortener/internal/http-server/handlers/url/delete"
-	"url-shortener/internal/http-server/handlers/url/delete/mocks"
-	resp "url-shortener/internal/lib/api/response"
-	"url-shortener/internal/lib/logger/handlers/slogdiscard"
+	"github.com/evgenmar/url-shortener/internal/http-server/handlers/url/delete"
+	"github.com/evgenmar/url-shortener/internal/http-server/handlers/url/delete/mocks"
+	resp "github.com/evgenmar/url-shortener/internal/lib/api/response"
+	"github.com/evgenmar/url-shortener/internal/lib/logger/handlers/slogdiscard"
 )
 
 func TestDeleteHandler(t *testing.T) {
